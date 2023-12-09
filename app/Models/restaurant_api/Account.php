@@ -11,8 +11,9 @@ class Account extends Model
     protected $fillable = [
         'password',
         'address',
-        'status',
+        'status'
     ];
+    
 
     
 }

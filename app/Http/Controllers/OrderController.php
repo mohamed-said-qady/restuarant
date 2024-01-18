@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\restaurant_api\Order;
 use Illuminate\Http\Request;
-
+use App\Models\restaurant_api\Bill;
+use App\Models\restaurant_api\Table;
 class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function addMeal()
     {
-        //
+        DB::table();
+        
     }
 
     /**

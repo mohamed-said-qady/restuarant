@@ -10,9 +10,15 @@ class TableChartController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function print(Request $request)
     {
-        //
+
+        $tableChart = new TableChart();
+        $tableChart->TableChartImage= $request->TableChartImage;
+        $tableChart->save();
+        return response()->json([$success='العملية تمت بنجاح',200]);
+        
+
     }
 
     /**

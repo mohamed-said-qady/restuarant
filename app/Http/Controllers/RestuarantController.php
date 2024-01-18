@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\restaurant_api\Restuarant;
 use Illuminate\Http\Request;
-
 class RestuarantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function addBranch(Request $request)
     {
-        //
+        $restuarant=new Restuarant();
+        $restuarant->name = $request->name; 
+        $restaurant->save();
     }
 
     /**

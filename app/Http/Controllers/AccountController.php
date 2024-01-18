@@ -12,7 +12,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        // can i speak
+        
         return 1 ;
 
     }

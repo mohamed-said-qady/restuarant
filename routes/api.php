@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\auth\registerController;
 //use App\auth\loginController;
 use App\Http\Controllers\api\auth\loginController;
+use App\Http\Controllers\TableChartController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -22,3 +23,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/register',[registerController::class,'register']);
 Route::post('/login',[loginController::class,'login']);
+
+Route::post('/tableChart',[TableChartController::class,'print']);

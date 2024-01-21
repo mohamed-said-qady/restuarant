@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('dataJoined');
-            $table->unsignedBigInteger('branchId');
-            $table->foreign('branchId')->references('id')->on('branches');
+            $table->string('name');
+            $table->string('phone');
+            $table->unsignedBigInteger('branch_id');
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();
         });
     }

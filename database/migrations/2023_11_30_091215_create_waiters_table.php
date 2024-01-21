@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('receptionists', function (Blueprint $table) {
+        Schema::create('waiters', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('reservationId');
-            $table->foreign('reservationId')->references('id')->on('reservations'); 
+            $table->unsignedBigInteger('Order_id');
+            $table->foreign('Order_id')->references('id')->on('orders'); 
             $table->timestamps();
+
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('receptionists');
+        Schema::dropIfExists('waiters');
     }
 };

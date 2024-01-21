@@ -15,10 +15,9 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('password');
             $table->string('address');
-            $table->string('created_at');
             $table->enum('status', ['active', 'closed','canceled','BlackListed']);
-            $table->unsignedBigInteger('emoloyeeId');
-            $table->foreign('emoloyeeId')->references('id')->on('employees');
+            $table->unsignedBigInteger('emoloyee_id');
+            $table->foreign('emoloyee_id')->references('id')->on('employees');
             $table->timestamps();
         });
     }

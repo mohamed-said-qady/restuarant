@@ -18,8 +18,10 @@ return new class extends Migration
             $table->enum('status', ['Requested', 'Pending','Confirmed','Checked-in','Canceled','abandoned']);
             $table->string('notes');
             $table->date('checkInTime');
-            $table->unsignedBigInteger('tableId');
-            $table->foreign('tableId')->references('id')->on('tables');
+            $table->unsignedBigInteger('table_id');
+            $table->foreign('table_id')->references('id')->on('tables');
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('Employees');
             $table->timestamps();
         });
     }

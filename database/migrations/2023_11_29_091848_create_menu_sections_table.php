@@ -15,8 +15,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->integer('title');
             $table->integer('description');
-            $table->unsignedBigInteger('menuId');
-            $table->foreign('menuId')->references('id')->on('menus');
+            $table->unsignedBigInteger('menu_id');
+            $table->foreign('menu_id')->references('id')->on('menus');
             $table->timestamps();
         });
     }

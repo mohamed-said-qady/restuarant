@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('notification');
             $table->date('createOn');
             $table->string('content');
-            $table->unsignedBigInteger('reservationId');
-            $table->foreign('reservationId')->references('id')->on('reservations');
+            $table->unsignedBigInteger('reservation_id');
+            $table->foreign('reservation_id')->references('id')->on('reservations');
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->enum('address',['streetdress','city','state','zipcode','country']);
-            $table->unsignedBigInteger('restuarantId');
-            $table->foreign('restuarantId')->references('id')->on('restuarants');
+           $table->unsignedBigInteger('restuarant_id');
+            $table->foreign('restuarant_id')->references('id')->on('restuarants');
             $table->timestamps();
         });
     }

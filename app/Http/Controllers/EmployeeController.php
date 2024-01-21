@@ -4,29 +4,39 @@ namespace App\Http\Controllers;
 
 use App\Models\restaurant_api\Employee;
 use Illuminate\Http\Request;
+use App\Models\restaurant_api\Order;
+use App\Models\restaurant_api\Reservation;
 
 class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function takeOrder(Request $request)
     {
-        //
+        $this->Order()->save($request);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+   
+    public function createOrder(Request $request)
     {
-        //
+        $orderData=$request->all();
+        dd($orderData);
+       /* $order =new Order();
+        $order->id=$orderData['id'];
+        $order->status=$orderData['status'];
+         $order->table_id=$orderData['table_id'];
+         dd($order);
+        //$order->save();
+        //Employee()->Order()->create($order);
+        return response()->json(['success'],201);*/
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function createReservation(Request $request)
     {
         //
     }
@@ -34,32 +44,10 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Employee $employee)
+    public function addEmployee(Employee $employee)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Employee $employee)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Employee $employee)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Employee $employee)
-    {
-        //
-    }
+    
 }

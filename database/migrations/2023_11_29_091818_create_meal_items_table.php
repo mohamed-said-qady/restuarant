@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('meal_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('quantity');
-            $table->unsignedBigInteger('mealId');
-            $table->foreign('mealId')->references('id')->on('meals');
-            $table->unsignedBigInteger('menuItemId');
-            $table->foreign('menuItemId')->references('id')->on('menu_items');
+            $table->unsignedBigInteger('meal_id');
+            $table->foreign('meal_id')->references('id')->on('meals');
+            $table->unsignedBigInteger('menuItem_id');
+            $table->foreign('menuItem_id')->references('id')->on('menu_items');
             $table->timestamps();
         });
     }

@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('paymentId');
+            //$table->integer('paymentId');
             $table->double('amount');
             $table->date('creationDate');
-            $table->unsignedBigInteger('billId');
-            $table->foreign('billId')->references('id')->on('bills');
             $table->timestamps();
         });
     }

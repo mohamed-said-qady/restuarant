@@ -6,16 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
+    /** 
      * Run the migrations.
      */
     public function up(): void
-    {
+    { 
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->enum('status', ['Received', 'Preparing','Complete','Canceled','None']);
-            $table->unsignedBigInteger('tableId');
-            $table->foreign('tableId')->references('id')->on('tables');
+            $table->unsignedBigInteger('table_id');
+            $table->foreign('table_id')->references('id')->on('tables');
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('Employees');
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->integer('tableSeatNumber');
             $table->enum('type', ['Regular', 'Kid','Accessible','Other']);
-            $table->unsignedBigInteger('tableId');
-            $table->foreign('tableId')->references('id')->on('tables');
+            $table->unsignedBigInteger('table_id');
+            $table->foreign('table_id')->references('id')->on('tables');
             $table->timestamps();
         });
     }

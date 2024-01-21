@@ -6,6 +6,9 @@ use App\Http\Controllers\api\auth\registerController;
 //use App\auth\loginController;
 use App\Http\Controllers\api\auth\loginController;
 use App\Http\Controllers\TableChartController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\EmployeeController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,3 +28,6 @@ Route::get('/register',[registerController::class,'register']);
 Route::post('/login',[loginController::class,'login']);
 
 Route::post('/tableChart',[TableChartController::class,'print']);
+Route::post('/addMeal',[OrderController::class,'addMeal']);
+Route::post('/removeMeal',[OrderController::class,'removeMeal']);
+Route::post('/createOrder',[EmployeeController::class,'createOrder']);

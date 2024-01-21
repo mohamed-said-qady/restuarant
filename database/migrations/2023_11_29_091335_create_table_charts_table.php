@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('table_charts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->photo('TableChartImage');
-            $table->unsignedBigInteger('branchId');
-            $table->foreign('branchId')->references('id')->on('branches');
+            $table->string('TableChartImage');
+            $table->unsignedBigInteger('branch_id');
+           $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('kitchens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('branchId');
-            $table->foreign('branchId')->references('id')->on('branches');
+            $table->unsignedBigInteger('branch_id');
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();
         });
     }

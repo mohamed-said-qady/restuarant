@@ -7,14 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. 
      */
     public function up(): void
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('table_seatId');
-            $table->foreign('table_seatId')->references('id')->on('table_seats');
+            /*$table->unsignedBigInteger('table_seatId');
+            $table->foreign('table_seatId')->references('id')->on('table_seats');*/
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }

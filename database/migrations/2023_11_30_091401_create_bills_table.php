@@ -17,10 +17,10 @@ return new class extends Migration
             $table->double('tip');
             $table->double('tax');
             $table->boolean('isPaid');
-            $table->unsignedBigInteger('OrderId');
-            $table->foreign('OrderId')->references('id')->on('orders');
-            $table->unsignedBigInteger('paymentId');
-            $table->foreign('paymentId')->references('id')->on('payments');
+            $table->unsignedBigInteger('Order_id');
+            $table->foreign('Order_id')->references('id')->on('orders');
+            $table->unsignedBigInteger('payment_id');
+            $table->foreign('payment_id')->references('id')->on('payments');
             $table->timestamps();
         });
     }

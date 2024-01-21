@@ -4,17 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\restaurant_api\Kitchen;
 use Illuminate\Http\Request;
+use App\Models\restaurant_api\Employee;
 
 class KitchenController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function assignChef(Request $request)
     {
-        //
-    }
+        // استلام معرّف الموظف من الطلب
+        $employeeId = $request->input('employee_id');
 
+        // العثور على الموظف باستخدام المعرّف
+        $employee = Employee::find($employeeId);
+
+        if ($employee) {
+            // قم بإجراء الإجراء المطلوب على النموذج
+            // يمكنك إضافة رمزك هنا
+            $employee->role ='chef' ;
+
+            return response()->json(['message' => 'تم تعيين الشيف بنجاح']);
+        } else {
+            return response()->json(['message' => 'لم يتم العثور على الموظف']);
+        }
+    }
     /**
      * Show the form for creating a new resource.
      */

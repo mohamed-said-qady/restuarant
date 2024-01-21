@@ -11,4 +11,7 @@ class Reservation extends Model
     public function Table(){
         return $this->hasMany('App\Models\restaurant_api\Table');
     }
+    public function Employee(){
+        return $this->belongsTo('App\Models\restaurant_api\Employee');
+    }
 }

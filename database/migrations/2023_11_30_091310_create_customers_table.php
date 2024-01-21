@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('reservationId');
-            $table->foreign('reservationId')->references('id')->on('reservations');
+            $table->unsignedBigInteger('reservation_id');
+           $table->foreign('reservation_id')->references('id')->on('reservations');
             $table->timestamps();
         });
     }

@@ -15,9 +15,12 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->date('dataJoined');
             $table->string('name');
+            $table->string('password');
             $table->string('phone');
+            $table->enum('status', ['active', 'closed','canceled','BlackListed']);
             $table->unsignedBigInteger('branch_id');
             $table->foreign('branch_id')->references('id')->on('branches');
+            
             $table->timestamps();
         });
     }

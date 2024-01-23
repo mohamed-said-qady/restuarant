@@ -20,16 +20,7 @@ class EmployeeController extends Controller
    
     public function createOrder(Request $request)
     {
-        $orderData=$request->all();
-        dd($orderData);
-       /* $order =new Order();
-        $order->id=$orderData['id'];
-        $order->status=$orderData['status'];
-         $order->table_id=$orderData['table_id'];
-         dd($order);
-        //$order->save();
-        //Employee()->Order()->create($order);
-        return response()->json(['success'],201);*/
+        
 
     }
 
